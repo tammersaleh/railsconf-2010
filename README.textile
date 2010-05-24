@@ -2,3 +2,35 @@ h1. Outline
 
 * Foo
 * Bar
+
+h1. Instructions for getting started:
+
+h2. Running the classroom locally
+
+The classroom relies on the following gems:
+
+* @haml@
+* @activesupport@
+* @podium@
+* @ratpack@
+* @RedCloth@
+* @sinatra@
+* @sinatra-static-assets@
+
+It's just a rack app, so you can run it via "shotgun":http://rubygems.org/gems/shotgun:  @shotgun configu.ru@
+
+h2. Slides
+
+* ...are found under @podium/slides/railsconf-2010@
+* The images go under @podium/assets/images@
+* Each slide is inside a @.slide@ div
+* @.slide@ divs with a class of @.section@ are sections
+* @.slide@ divs with a class of @.subsection@ are subsections
+* Sections and subsections should have an id, like such:  @.slide.section#Main_Section@, or @.slide.subsection#Name_of_this_Subsection@.  Those ids are used to generate the section listing (which you'll see when you type @s@).
+* I've added custom HAML filters, @:code@, @:rubycode@, and @:htmlcode@ for adding syntax highlighted code blocks.
+
+h2. Workshops
+
+* ...are found under @workshops/railsconf-2010@
+* should start with a number for ordering.
+* should have a README.textile file, which is used to generate the classroom page.
