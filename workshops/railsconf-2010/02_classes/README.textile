@@ -1,0 +1,21 @@
+h4. Create a Library
+
+In this lab you will be creating a library to store books.  
+
+Create a Book and a Video class. Each of these will have a name, and will need to know if they have been checked out or not.
+
+<pre><code class="ruby">
+video = Video.new("Tom Sawyer")
+book  = Book.new("Tom Sawyer")
+book.checked_out? # false
+book.checkout!
+book.checked_out? # true
+</code></pre>
+
+Now create a class called Library.  This class will consist of the following methods:  
+
+* @Library#add(book)@ to add books to the library
+* @Library#checkout(book)@ to checkout a book
+* @Library.checked_out@ that returns the items currently checked out.  
+* @Library.catelog@ that returns the contents of the library.
+

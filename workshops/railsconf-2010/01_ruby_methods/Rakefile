@@ -1,0 +1,37 @@
+require 'rake/testtask'
+
+task :default => ["test:challenge", "test:extra:challenge"]
+task :verify  => ["test:solution",  "test:extra:solution"]
+
+namespace(:test) do
+  Rake::TestTask.new(:solution) do |t|
+    t.libs << "test"
+    t.libs << "solution"
+    t.test_files = FileList['test/*_test.rb']
+    t.verbose = false
+  end
+
+  Rake::TestTask.new(:challenge) do |t|
+    t.libs << "test"
+    t.libs << "challenge"
+    t.test_files = FileList['test/*_test.rb']
+    t.verbose = false
+  end
+end
+
+namespace("test:extra") do
+  Rake::TestTask.new(:solution) do |t|
+    t.libs << "test"
+    t.libs << "solution"
+    t.test_files = FileList['test/extra_credit/*_test.rb']
+    t.verbose = false
+  end
+
+  Rake::TestTask.new(:challenge) do |t|
+    t.libs << "test"
+    t.libs << "challenge"
+    t.test_files = FileList['test/extra_credit/*_test.rb']
+    t.verbose = false
+  end
+end
+

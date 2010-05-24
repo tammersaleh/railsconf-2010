@@ -1,0 +1,25 @@
+*Create a ruby method that logs items to a log device.*
+
+<pre><code class='ruby'>
+log_device = []
+log(log_device, "string")            # Appends 'Attention! "string"' to log_device
+log(log_device, 123)                 # Appends 'Attention! 123' to log_device
+log(log_device, :symbol)             # Appends 'Attention! :symbol' to log_device
+log(log_device, [:one, 2, "three"])  # Appends 'Attention! [:one, 2, "three"]' to log_device
+p log_device 
+# ['Attention! "string"',
+#  'Attention! 123',
+#  'Attention! :symbol',
+#  'Attention! [:one, 2, "three"]']
+</code></pre>
+
+*Hint:* @Object#inspect@ converts an object into a readable string.
+
+*Extra credit: Have the @log@ method take optional parameters to controll the output.*
+
+<pre><code class="ruby">
+log("string", :pre => "Achtung!") # Achtung! "string"
+log(:symbol,  :upcase => true)    # ATTENTION! :SYMBOL
+</code></pre>
+
+*Hint:*  @String#upcase@ will help you out, here.

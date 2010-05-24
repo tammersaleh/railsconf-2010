@@ -1,0 +1,21 @@
+%h2= @course.humanize
+
+
+%h3 
+  %a{:href => "/slides/#{@course}"} View the slides
+
+%h2.overview Overview
+
+.course_description
+  ~ RedCloth.new(@course_description).to_html
+
+%ul.workshops
+  - @workshops.each do |name, description|
+    %li.workshop
+      %h4.workshop_title
+        = name.titleize 
+
+      .description
+        .download
+          = link_to "Download Files", "#{@request.path_info}/#{name}.tgz"
+        ~ RedCloth.new(description).to_html

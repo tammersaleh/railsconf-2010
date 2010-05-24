@@ -1,0 +1,61 @@
+!!!
+%html
+  %head
+    %title
+      Classroom
+      = ": #{@page_title}" if @page_title
+
+    /[if IE]
+      = stylesheet_link_tag 'blueprint/lib/ie', :media => "screen, projection"
+    = stylesheet_link_tag 'blueprint/print',    :media => "print"
+
+    = stylesheet_link_tag 'code'
+    = stylesheet_link_tag 'application'
+
+  %body
+    .container
+      #banner.column.span-24.last
+        %h1
+          %a{:href => "/"} Classroom
+    
+      #sidebar.column.span-6
+        %h2 Courses
+        %ul.courses
+          - courses.each do |course|
+            %li
+              %a{:href => "/courses/#{course}"} 
+                = course.titleize
+        %h2 Instructors
+        %ul.instructors
+          %li
+            %a{:href => "http://tammersaleh.com"} 
+              Tammer Saleh
+          %li
+            %a{:href => "http://thoughtbot.com"} 
+              Chad Pytel
+        %h2 Helpful Links
+        %ul.helpful_links
+          %li
+            %a{:href => "http://tammersaleh.wufoo.com/forms/railsconf-2010-feedback/"} 
+              Give us Feedback!
+          %li
+            %a{:href => "http://railsapi.com/doc/rails-v3.0.0.beta.3/rdoc.zip"} 
+              Download Rails 3.0 beta 3 Docs
+          %li
+            %a{:href => "http://download.macromates.com/TextMate_1.5.9.dmg"} 
+              Download Textmate trial version
+      #content.column.span-18.last
+        = yield
+    #footer.column.span-24.last
+      .citation
+        &copy; 
+        = Time.now.year
+        Tammer Saleh Consulting, Inc & Thoughtbot, Inc.
+    = javascript_include_tag "jquery-1.4.1.js"
+    = javascript_include_tag "application.js"
+    = javascript_include_tag "code_highlighter/base.js"
+    = javascript_include_tag "code_highlighter/css.js"
+    = javascript_include_tag "code_highlighter/html.js"
+    = javascript_include_tag "code_highlighter/javascript.js"
+    = javascript_include_tag "code_highlighter/ruby.js"
+    

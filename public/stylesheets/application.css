@@ -1,0 +1,137 @@
+body {
+  font-size: 90%;
+  font-family: Lucida Grande, Verdana, sans-serif;
+  color: #333;
+  background: #FDFDFD;
+  margin: 0;
+  border-top: 6px solid #900;
+}
+.container {
+  width: 960px;
+  padding: 0 20px;
+  margin: 0 auto;
+  font-size: 1em;
+  line-height: 1.4em;
+}
+a:link, a:visited {
+  color: #369;
+  text-decoration: none;
+}
+a:hover, a:active {
+  text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+h1, .h1 {
+  font: 2.25em Georgia, Times New Roman, serif;
+}
+h2, .h2 {
+  font: 1.75em Georgia, Times New Roman, serif;
+}
+h3, .h3 {
+}
+h4, .h4 {
+  font-weight: bold;
+  margin-top: 1em;
+}
+h5, .h5 {
+}
+h6, .h6 {
+}
+#banner {
+  padding: 0px 0;
+  border-bottom: 2px solid #CCC;
+}
+#banner a, #banner a:hover {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  
+}
+#sidebar {
+  width: 230px;
+  float: left;
+  margin-bottom: 30px;
+}
+#content {
+  width: 680px;
+  float: right;
+  border-left: 1px solid #DDD;
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+#footer {
+  min-width: 980px;
+  font-size: 0.8em;
+  color: #FFF;
+  clear: both;
+  padding: 20px 0 40px;
+  text-align: center;
+  background: #232323;
+}
+hr {
+  border: none;
+  border-top: 1px solid #DDD;
+  margin: 1.25em 0;
+}
+ul {
+  padding: 0 0 0 1.25em;
+  list-style: square;
+}
+.workshops {
+  padding: 1em 0;
+  list-style: none;
+}
+.workshop {
+  border-top: 1px dashed #DDD;
+  border-bottom: 1px dashed #DDD;
+  margin-bottom: -1px;
+}
+.workshop .workshop_title {
+  color: #369;
+  cursor: pointer;
+  margin: 0;
+  padding: 6px 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.workshop .workshop_title:hover {
+  background: #EEE;
+}
+
+.workshop .download {
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.overview {
+  margin: 0;
+  padding: 6px 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.course_description {
+  padding: 40px 10px 10px 40px;
+  margin-top: -40px;
+  background: #EEE;
+}
+
+.description {
+  padding: 40px 10px 10px 40px;
+  margin-top: -32px;
+  background: #EEE;
+}
+
+.description h2, .description h3, .description h4 {
+  border-bottom: 1px dotted black;
+}
+pre, code {
+  font-size: 13px;
+}
+pre { 
+  padding: 10px;
+  overflow: auto;
+}
