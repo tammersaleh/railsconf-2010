@@ -1,7 +1,6 @@
 h1. Outline
 
-* Foo
-* Bar
+* Introduction
 
 h1. Instructions for getting started:
 
@@ -34,3 +33,4 @@ h2. Workshops
 * ...are found under @workshops/railsconf-2010@
 * should start with a number for ordering.
 * should have a README.textile file, which is used to generate the classroom page.
+
