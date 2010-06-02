@@ -10,15 +10,20 @@ h3. Lay of the Land
 ** The 15 minute code review
 * How did the project get here?
 ** Technical reasons
+*** Poor developers?
+*** Hard technical problems?
+*** Lack of constant refactoring?
+*** Technical Debt
 ** Non-technical reasons
 *** Process?
 *** Personality?
 *** Lack of focus on quality?
 *** Arbitrary deadlines?
 * Should you take this project?
-** Are the technical issues surmountable
+** Are the technical issues surmountable?  Are the bad developers still there?
 ** If there are non-technical issues, do you really believe you can fix them?
-** Rates?
+** How much should I charge?
+** Visibility:  If this works, will the client likely send me other good clients?  If this fails, will it have my name all over it?
 
 h3. Objectives
 
@@ -31,8 +36,9 @@ h3. Strategy
 * _Some content from first part of the doing it wrong talk_
 * Small Chunks
 * Communication
+* Visibility
 * TDD
-* Balance refactorings with features
+* Balance of refactorings with features
 
 h3. Tactics
 
