@@ -1,6 +1,43 @@
 h1. Outline
 
-* Introduction
+I'm going with a marshal theme, here.  Let's see how this plays out...
+
+h3. Introduction
+
+h3. Lay of the Land
+
+* Are you in a rescue mission?
+** The 15 minute code review
+* How did the project get here?
+** Technical reasons
+** Non-technical reasons
+*** Process?
+*** Personality?
+*** Lack of focus on quality?
+*** Arbitrary deadlines?
+* Should you take this project?
+** Are the technical issues surmountable
+** If there are non-technical issues, do you really believe you can fix them?
+** Rates?
+
+h3. Objectives
+
+* Un-fuck the codebase.
+* Train the client.
+* Fix the process.
+
+h3. Strategy
+
+* _Some content from first part of the doing it wrong talk_
+* Small Chunks
+* Communication
+* TDD
+* Balance refactorings with features
+
+h3. Tactics
+
+* Examples 
+* _Some content from second part of doing it wrong talk_
 
 h1. Instructions for getting started:
 
