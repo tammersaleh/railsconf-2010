@@ -137,3 +137,30 @@ h4 {
 .slide pre {
   padding: 0.25em;
 }
+
+.slide#The_War {
+  background: url(/slides/images/iwo_jima_ww2.jpg) no-repeat;
+  -webkit-background-size: 100%;
+}
+
+.slide#CodeReviewModels {
+  background: url(/slides/images/headless_female_mannequins.jpg) center no-repeat;
+}
+
+.slide#The_Lay_of_the_Land {
+  background: url(/slides/images/scenery-mountains.jpg) no-repeat;
+  -webkit-background-size: 100%;
+}
+
+.slide#The_War h1, .slide#The_Lay_of_the_Land h1 {
+  font-family: Helvetica;
+  color: yellow;
+  background: rgba(0,0,0,0.8);
+  border: 1px solid black;
+  font-weight: 100;
+  padding: 10px;
+  -webkit-border-radius: 20px;
+  width: 50%;
+  margin: auto auto;
+}
+
