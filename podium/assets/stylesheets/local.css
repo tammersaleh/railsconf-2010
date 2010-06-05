@@ -14,8 +14,8 @@ body {
 }
 
 .slide.section {
-  background: yellow;
-  color: black;
+  background: black;
+  color: yellow;
   font-weight: bold;
 }
 
@@ -75,7 +75,7 @@ h1, h2, h3, h4 {
 }
 
 .slide strong, .slide b, .slide em {
-  color: lightblue;
+  color: darkred;
 }
 
 .slide .box {
@@ -107,29 +107,6 @@ h1, h2, h3, h4 {
   font-weight: normal; 
 }
 
-.slide.background_image {
-  background-color: transparent;
-  text-shadow: none;
-}
-
-.slide.background_image h1 {
-  color: yellow;
-  background: rgba(0,0,0,0.8);
-  border: 1px solid black;
-  font-weight: 100;
-  padding: 10px;
-  -webkit-border-radius: 20px;
-}
-
-.slide.background_image img {
-  z-index: -1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-}
-
 h4 {
   text-align: center;
 }
@@ -138,22 +115,20 @@ h4 {
   padding: 0.25em;
 }
 
-.slide#The_War {
-  background: url(/slides/images/iwo_jima_ww2.jpg) no-repeat;
+.slide .background {
+  display: none;
+}
+
+.slide.has_background {
   -webkit-background-size: 100%;
 }
 
-.slide#CodeReviewModels {
-  background: url(/slides/images/headless_female_mannequins.jpg) center no-repeat;
-}
-
-.slide#The_Lay_of_the_Land {
-  background: url(/slides/images/scenery-mountains.jpg) no-repeat;
+.slide#libraries {
+  background: url(/slides/images/books.jpg) no-repeat;
   -webkit-background-size: 100%;
 }
 
-.slide#The_War h1, .slide#The_Lay_of_the_Land h1 {
-  font-family: Helvetica;
+.slide.has_background h1, .slide.has_background h2, .slide.has_background h3, .slide.has_background h4 {
   color: yellow;
   background: rgba(0,0,0,0.8);
   border: 1px solid black;
