@@ -1,0 +1,129 @@
+.slide.section#Models
+
+  %h1 Models
+
+.slide
+
+  %h1 Too Many Models
+
+.slide
+
+  %h1 "Just One More Model"
+
+.slide
+
+  %h3 Class
+  %h3 Migrations
+  %h3 Unit Tests
+  %h3 Factories/Fixtures for Tests
+  %h3 Additional Finders and Validations
+
+.slide
+
+  :rubycode
+    class Article < ActiveRecord::Base
+      belongs_to :state
+      belongs_to :category
+
+      validates_presence_of :state_id, :category_id
+    end
+
+.slide
+
+  :rubycode
+    class State < ActiveRecord::Base
+      has_many :articles
+    end
+
+    class Category < ActiveRecord::Base
+      has_many :articles
+    end
+
+.slide
+
+  %h3 Setting Article State
+  :rubycode
+    @article.state = State.find_by_name("published")
+
+.slide
+
+  %h3 Setting Article State
+  :rubycode
+    @article.state = State.published
+
+  %h3 Checking Article State
+  :rubycode
+    @article.state == State.published
+
+.slide
+
+  :rubycode
+    class State < ActiveRecord::Base
+      validates_presence_of :name
+
+      class << self
+        all.each do |state|
+          define_method "#{state}" do
+            first(:conditions => { :name => state })
+          end
+        end
+      end
+    end
+
+.slide
+
+  %h1 No Hardcoded Strings
+
+.slide
+
+  %h1 These are stored in the database, but there is functionality tied to them
+
+.slide
+
+  %h1 They Can't Change
+
+.slide
+
+  %h1 So Why Are They Stored In The Database?
+
+.slide
+
+  %h1 Workshop
+  %h2 Denormalize the Data
+
+.slide
+
+  %h1 Solution
+  %h2 Denormalize the Data
+
+.slide
+
+  %h3 Delete the tables
+  %h3 Delete the Category and State models
+  %h3 Refactor the Article model
+
+.slide
+
+  :rubycode
+    class Article < ActiveRecord::Base
+      STATES = %w(draft review published archived) 
+      CATEGORIES = %w(tips faqs misc)
+
+      validates_presence_of :state, :category
+      validates_inclusion_of :state, :in => STATES
+      validates_inclusion_of :category, :in => CATEGORIES
+
+      class << self
+        STATES.each do |state|
+          define_method "#{state}" do
+            state
+          end
+        end
+
+        CATEGORIES.each do |category|
+          define_method "#{category}" do
+            category
+          end
+        end
+      end
+    end
