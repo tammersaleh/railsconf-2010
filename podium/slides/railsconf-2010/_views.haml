@@ -1,0 +1,122 @@
+.slide.section#Views
+
+  %h1 Views
+
+.slide
+
+  %h1 Poorly Structured HTML
+
+.slide
+
+  %h1 Know Your Helpers
+
+.slide
+
+  :htmlcode
+    <div class="post">
+      <h2>Title</h2>
+      <div class="body">
+        <%= @post.body %>
+      </div>
+      <ol class="comments">
+        <% @post.comments.each do |comment| %>
+          <li class="comment">
+            <%= comment.body %>
+          </li>
+        <% end %>
+      </ol>
+    </div>
+
+.slide
+
+  :htmlcode
+    <div class="post" id="post_<%= @post.id %>">
+      <h2>Title</h2>
+      <div class="body">
+        <%= @post.body %>
+      </div>
+      <ol class="comments">
+        <% @post.comments.each do |comment| %>
+          <li class="comment" id="comment_<%= comment.id %>">
+            <%= comment.body %>
+          </li>
+        <% end %>
+      </ol>
+    </div>
+
+.slide
+
+  %h2 div_for
+
+.slide
+
+  :htmlcode
+    <% div_for @post do %>
+      <h2>Title</h2>
+      <div class="body">
+        <%= @post.body %>
+      </div>
+      <ol class="comments">
+        <% @post.comments.each do |comment| %>
+          <li class="comment" id="comment_<%= comment.id %>">
+            <%= comment.body %>
+          </li>
+        <% end %>
+      </ol>
+    <% end %>
+
+.slide
+
+  %h2 content_tag_for
+
+.slide
+
+  :htmlcode
+    <% div_for @post do %>
+      <h2>Title</h2>
+      <div class="body">
+        <%= @post.body %>
+      </div>
+      <ol class="comments">
+        <% @post.comments.each do |comment| %>
+          <% content_tag_for comment do %>
+            <%= comment.body %>
+          <% end %>
+        <% end %>
+      </ol>
+    <% end %>
+
+.slide
+
+  %h2 render @collection
+
+.slide
+
+  :htmlcode
+    <% div_for @post do %>
+      <h2>Title</h2>
+      <div class="body">
+        <%= @post.body %>
+      </div>
+      <ol class="comments">
+        <%= render @post.comments %>
+      </ol>
+    <% end %>
+
+  %h3 app/views/posts/_comment.html.erb
+
+  :htmlcode 
+    <% content_tag_for comment do %>
+      <%= comment.body %>
+    <% end %>
+
+.slide
+
+  %h1 Workshop
+  %h2 Clean Up the Views
+  %h3 Use content_tag_for, div_for, and render
+
+.slide
+
+  %h1 Solution
+  %h2 Clean Up the Views
