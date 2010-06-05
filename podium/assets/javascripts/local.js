@@ -6,10 +6,10 @@ $(function(){
     $(this).html($(this).html().replace(/&amp;/, "<span class='ampersand'>&amp;</span>"))
   });
 
-  $("#slides .slide .background").each(function(){
+  $(".slide .background").each(function(){
     // alert("Found slide with background " + $(this).text());
     $(this).parent(".slide").
-      css("background", "url(" + $(this).text() + ") no-repeat").
+      css("background", "url(/slides/images/" + $(this).text() + ") no-repeat").
       addClass("has_background");
   });
 });

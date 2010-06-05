@@ -75,7 +75,7 @@ h1, h2, h3, h4 {
 }
 
 .slide strong, .slide b, .slide em {
-  color: darkred;
+  color: red;
 }
 
 .slide .box {
@@ -123,12 +123,7 @@ h4 {
   -webkit-background-size: 100%;
 }
 
-.slide#libraries {
-  background: url(/slides/images/books.jpg) no-repeat;
-  -webkit-background-size: 100%;
-}
-
-.slide.has_background h1, .slide.has_background h2, .slide.has_background h3, .slide.has_background h4 {
+.slide.has_background>* {
   color: yellow;
   background: rgba(0,0,0,0.8);
   border: 1px solid black;
