@@ -1,0 +1,32 @@
+h3. Getting Started
+
+After downloading and expanding the code, change into the expanded directory and run the following commands
+
+<pre><code>rake db:create:all
+rake db:migrate
+rake db:bootstrap:load
+</code></pre>
+
+All of the workshops use the same codebase. At the end of each workshop you should have working code.  Each workshop is independant, so if at the start of a new workshop you find yourself without working code, simply download the original code again and start over.
+
+h3. Workshop 1: Denormalize the Data
+
+The Article model currently belongs to a State and Category model.  
+
+Denormalize this data so that the Article model just has state and category string columns.
+
+The tests are passing, use them as your guide to make sure you haven't broken anything.  There are unit, functional, and cucumber integration tests.  But don't forget to change them to match the new functionality!
+
+The existing Category and State values were loaded via @rake db:bootstrap:load@ above and are in @db/bootstrap/states.yml@ and @db/bootstrap/categories.yml@.
+
+h3. Workshop 2: Clean Up the Views
+
+The views currently do not make use of @div_for@, @content_for@, and @content_tag_for@.  Improve the views by changing them to use these methods, wherever you see fit.
+
+h3. Workshop 3: Extract to a New Controller
+
+The @ArticlesController@ currently has a @flag@ action.  This action calls the @flag!@ method on @Article@ to do its work.
+
+Move the @flag@ action to a RESTful action on a _new_ controller.
+
+During this change, the functional tests will need to change, but the Cucumber integration tests should not need to change.
