@@ -1,8 +1,10 @@
 .slide.section#The_War
+  .background iwo_jima_ww2.jpg
 
   %h1 The War
 
 .slide.subsection#The_Lay_of_the_Land
+  .background scenery-mountains.jpg
 
   %h1 Lay of the Land
 
@@ -10,41 +12,161 @@
 
   %h2 Are you in a rescue mission?
 
-  %h3 Or...
-
   %h1 The 15 minute code review
 
 .slide
+  .background model_city.jpg
   %h1 <em>1:</em> Models
 
-  = image_tag "/images/headless_female_mannequins.jpg"
+.slide
+
+  %h3 Too many models?
+
+  :code
+    $ ls app/models/ | wc -l
+    68
 
 .slide
 
-  %h3 Non-RESTful controllers
-  %h3 Pseudo-validations in create actions
-  %h3 Monolythic controllers
-  %h3 Custom authentication
+  %h3 No tests?
+
+  :code
+    $ grep -lR "assert true" test/unit
+    test/unit/file_upload_test.rb
+    test/unit/notification_test.rb
+    test/unit/status_update_test.rb
+    test/unit/sysops_alerts_mailer_test.rb
+    ...
+  
+.slide
+
+  %h3 Empty models?
+  :rubycode
+    # app/models/person.rb 
+    class Person < ActiveRecord::Base
+      # Tumbleweeds...
+    end
 
 .slide
+
+  %h3 General style issues.
+
+  .smaller
+    :rubycode
+      class Like < ActiveRecord::Base
+        def self.gift_likes(gift_id = nil)
+          if gift_id
+            likes = find(:all, 
+              :conditions => ["gift_id = ?",gift_id],
+              :select => "count(id) as count, gift_id, 
+                          photoset_id, preference as likes",
+              :group => "gift_id,photoset_id,preference",
+              :order => "gift_id, photoset_id")
+          else
+            likes = find(:all, 
+              :select => "count(id) as count, gift_id, 
+                          photoset_id, preference as likes",
+              :group => "gift_id,photoset_id,preference",
+              :order => "gift_id, photoset_id")
+          end
+          return likes
+        end
+      end
+
+.slide
+  .background giant-Nintendo-NES_controller_DIY.jpg
 
   %h1 <em>2:</em> Controllers
 
 .slide
 
   %h3 Non-RESTful controllers
+
+  :code
+    $ egrep -hR '^ *def ' app/controllers/ | \
+      egrep -v '(index|show|create|edit|new|destroy)'
+    def redirect_on_utm_source
+    def find_user
+    def assign_profile_referral
+    def set_invite_count
+    def confirm
+    def deny
+    def models
+    ...600 more...
+
+.slide
+
   %h3 Pseudo-validations in create actions
-  %h3 Monolythic controllers
+
+  .small
+    :rubycode
+      def create
+        ...
+        # Just a few sanity checks...
+        if params[:title].nil? || params[:title].length <= 3
+          reason = "missing title"
+        elsif params[:title].length > 40
+          reason = "Title must be shorter than 40 characters."    
+        elsif params[:description].nil? || params[:description].length <= 3
+          reason = "Missing description"
+        elsif params[:description].length > 140
+          reason = "Description must be no longer than 140 characters."
+        elsif params[:duration].nil? 
+          reason = "Missing duration"
+        # ... about a dozen more...
+
+.slide
+  .background monolith.jpg
+
+  %div
+    %h2 Monolithic controllers
+
+    %h3 (Three controllers and over 100 actions)
+
+.slide
+
   %h3 Custom authentication
 
 .slide
 
   %h1 <em>3:</em> Views
 
+  = image_tag "/images/Brass-telescope.jpg", :height => "60%"
+
 .slide
+
+  %h3 ...
+
+.slide
+  .background books.jpg
 
   %h1 <em>4:</em> Libraries
 
+.slide
+
+  %h3 ...
+
+.slide
+
+  %h1 <em>5:</em> Danger signs
+
+  = image_tag "/images/cthulhuwarn.png", :height => "60%"
+
+.slide
+
+  %h3 Huge files.
+
+  :code
+    $ wc -l $(find app -name "*.rb") | sort -rn
+    2022 app/models/user.rb
+    1333 app/controllers/user/payments_controller.rb
+    1219 app/models/photoset.rb
+    ...
+
+.slide
+
+  = image_tag "/images/burning_eyes.jpg", :height => "100%"
+  
 .slide.section#Causes
 
   %h1 How did the project get here?
@@ -100,16 +222,29 @@
   %h2 Are the technical issues surmountable?  Are the bad developers still there?
 
 .slide
+  .background superman.jpg
 
-  %h2 If there are non-technical issues, do you really believe you can fix them?
+  %h2 Do you really believe you can fix the <em>non technical issues</em>?
+
+.slide
+  .background hiding_elephant.jpg
+
+  %h1 Visibility
 
 .slide
 
-  %h2 Visibility:  If this works, will the client likely send me other good clients?  If this fails, will it have my name all over it?
+  %h1 If this works... 
+  %h2 Will the client send good work next time?  
 
 .slide
 
-  %h2 How much should I charge?
+  %h1 If this fails... 
+  %h2 Will it have my name all over it?
+
+.slide
+  .background money.jpg
+
+  %h1 How much?
 
 .slide.subsection#Objectives
 
