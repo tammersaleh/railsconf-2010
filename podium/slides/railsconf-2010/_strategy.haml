@@ -39,7 +39,30 @@
 
 .slide
 
-  %h1 Client Communication and visibility
+  %h1 Client Communication and Visibility
+
+.slide
+
+  %h2 Record everything!
+  = image_tag "/images/microphone.jpg", :height => "60%"
+
+.slide
+  .background standup.jpeg
+
+  %h2 Weekly standups
+
+.slide
+  .background tools.jpg
+
+  %h1 Tools
+
+.slide
+
+  %h2 gitHub
+
+  = image_tag "/images/octocat.png", :height => "60%"
+
+  %h4 Client should subscribe to the RSS feeds
 
 .slide
 
@@ -57,24 +80,6 @@
   = image_tag "/images/campfire.png", :height => "60%"
   %h2 Campfire
 
-.slide
-
-  %h2 Record everything!
-  = image_tag "/images/microphone.jpg", :height => "60%"
-
-.slide
-
-  %h2 gitHub
-
-  = image_tag "/images/octocat.png", :height => "60%"
-
-  %h4 Client should subscribe to the RSS feeds
-
-.slide
-  .background standup.jpeg
-
-  %h2 Weekly standups
-
 .slide.subsection#Fix_the_Codebase
 
   %h1 <em>3:</em> Fix the codebase.
@@ -87,6 +92,12 @@
 
 .slide
 
+  %h3 Transfers domain knowledge.
+  %h3.inc Teaches the existing developers best practices.
+  %h3.inc Helps keep you focused.
+
+.slide
+
   %h1 Integration Tests
   %h3 Cover common paths for any area you're about to work on.
 
@@ -94,6 +105,21 @@
   
   %h2 Write <em>integration tests</em> for existing behavior
   %h2 Write <em>functional/unit tests</em> for added or modified behavior
+  
+.slide
+  
+  %h2 Start with integration tests for entire refactoring
+  
+  %ul
+    %li.inc Write functional test - watch it fail
+    %li.inc Write action - watch the test pass
+    %li.inc Wire into urls
+  
+  %h2.inc Repeat until integration tests pass
+  
+.slide
+  
+  = image_tag "/images/red-green-cycle.jpg", :width => "100%"
   
 .slide
 

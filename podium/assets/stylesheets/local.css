@@ -97,12 +97,16 @@ h1, h2, h3, h4 {
 }
 
 .slide blockquote {
-  font-size: 2em;
+  color: black;
+  background: white;
+  font-size: 3em;
   font-style: italic;
   padding: 1em;
   -webkit-border-radius: 10px;
-  -webkit-box-shadow: 0 0 15px gray;
-  border: 2px solid gray;
+  -webkit-box-shadow: 0 0 15px white;
+  border: 2px solid white;
+  text-align: center;
+  font-family: Baskerville, Palatino, "Book Antiqua", serif;
 }
 
 .ampersand {
