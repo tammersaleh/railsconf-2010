@@ -30,20 +30,21 @@
 
 .slide
 
-  :htmlcode
-    <div class="post" id="post_<%= @post.id %>">
-      <h2>Title</h2>
-      <div class="body">
-        <%= @post.body %>
+  .small
+    :htmlcode
+      <div class="post" id="post_<%= @post.id %>">
+        <h2>Title</h2>
+        <div class="body">
+          <%= @post.body %>
+        </div>
+        <ol class="comments">
+          <% @post.comments.each do |comment| %>
+            <li class="comment" id="comment_<%= comment.id %>">
+              <%= comment.body %>
+            </li>
+          <% end %>
+        </ol>
       </div>
-      <ol class="comments">
-        <% @post.comments.each do |comment| %>
-          <li class="comment" id="comment_<%= comment.id %>">
-            <%= comment.body %>
-          </li>
-        <% end %>
-      </ol>
-    </div>
 
 .slide
 
