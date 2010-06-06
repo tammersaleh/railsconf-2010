@@ -9,6 +9,7 @@
 .slide
 
   %h1 Know Your Helpers
+  %h3 And Know How They Change
 
 .slide
 
@@ -88,33 +89,82 @@
 
 .slide
 
-  %h2 render @collection
+  %h2 render
+
+.slide
+  
+  %h3 <tt>posts/index.html.erb</tt>
+  .small
+    :htmlcode
+      <% @posts.each do |post| -%>
+        <h2><%=h post.title %></h2>
+        <%= format_content post.body %>  
+        <p>
+          <%= link_to 'email', mail_to(post.user.email) %>
+        </p>
+      <% end -%>
+  
+.slide
+  
+  %h1 Move the post content to a partial
+  
+.slide
+  
+  %h3 <tt>posts/index.html.erb</tt>
+  .small
+    :htmlcode
+      <% @posts.each do |post| -%>
+        <%= render :partial => 'post', :object => :post %>
+      <% end -%>
+    
+  %h3 <tt>posts/_post.erb</tt>
+  .small
+    :htmlcode
+      <h2><%=h post.title %></h2>
+      <%= format_content post.body %>
+      <p>
+        <%= link_to 'email', mail_to(post.user.email) %>
+      </p>
+  
+.slide
+  
+  %h1 Looping was built into render
+  
+.slide
+  
+  %h3 <tt>posts/index.html.erb</tt>
+  .small
+    :htmlcode
+      <%= render :partial => 'post', :collection => @posts %>
+    
+  %h3 <tt>posts/_post.erb</tt>
+  .small
+    :htmlcode
+      <h2><%=h post.title %></h2>
+      <%= format_content post.body %>
+      <p>
+        <%= link_to 'email', mail_to(post.user.email) %>
+      </p>
+  
+.slide
+
+  %h1 But there is duplication and common naming here
 
 .slide
 
   :htmlcode
-    <% div_for @post do %>
-      <h2>Title</h2>
-      <div class="body">
-        <%= @post.body %>
-      </div>
-      <ol class="comments">
-        <%= render @post.comments %>
-      </ol>
-    <% end %>
+    <%= render :partial => @posts %>
 
-  %h3 app/views/posts/_comment.html.erb
+.slide
 
-  :htmlcode 
-    <% content_tag_for comment do %>
-      <%= comment.body %>
-    <% end %>
+  :htmlcode
+    <%= render @posts %>
 
 .slide
 
   %h1 Workshop
   %h2 Clean Up the Views
-  %h3 Use content_tag_for, div_for, and render
+  %h3 Use content_tag_for, div_for, content_for, and render to clean up the views
 
 .slide
 

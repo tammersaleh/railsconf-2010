@@ -62,7 +62,7 @@
       validates_presence_of :name
 
       class << self
-        all.each do |state|
+        State.all.each do |state|
           define_method "#{state}" do
             first(:conditions => { :name => state })
           end
@@ -113,16 +113,10 @@
       validates_inclusion_of :state, :in => STATES
       validates_inclusion_of :category, :in => CATEGORIES
 
-      class << self
-        STATES.each do |state|
-          define_method "#{state}" do
-            state
-          end
-        end
-
-        CATEGORIES.each do |category|
-          define_method "#{category}" do
-            category
+      STATES+CATEGORIES.each do |name|
+        class << self
+          define_method "#{name}" do
+            name
           end
         end
       end
