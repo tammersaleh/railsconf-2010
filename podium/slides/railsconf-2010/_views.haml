@@ -171,3 +171,65 @@
 
   %h1 Solution
   %h2 Clean Up the Views
+
+.slide
+
+  %h2 render
+  :htmlcode
+    <!-- app/views/articles/index.html.erb -->
+    <%= render @articles %>
+
+.slide
+
+  %h2 render
+  .small
+    :htmlcode
+      <!-- app/views/articles/_article.html.erb -->
+      <% content_tag_for :tr, article do %>
+        <td><%=h article.title %></td>
+        <td><%=h article.body %></td>
+        <td><%=h article.state %></td>
+        <td><%=h article.category %></td>
+        <td class="action"><%= link_to 'View', article %></td>
+        <td class="action"><%= link_to 'Edit', edit_article_path(article), :class => "yellow" %></td>
+        <td class="action"><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete, :class => "red" %></td>
+      <% end %>
+
+.slide
+
+  %h2 content_for
+  .small
+    :htmlcode
+      <% content_for :page_title, "Articles" %>
+        <title>
+          AntiPatterns Workshop 
+          <% if yield(:page_title) %>: <%= yield(:page_title) %><% end %>
+        </title>
+
+    :htmlcode
+      <% content_for :sidebar do %>
+        <%= link_to 'New article', new_article_path, :class => "blue" %>
+      <% end %>
+
+.slide
+
+  %h2 content_for
+  .small
+    :htmlcode
+      <h1><%= yield :page_title %></h1>
+      <div class="main<%= ' with_sidebar' if yield(:sidebar) %>">
+        <%= yield %>
+      </div>
+      <div class="sidebar">
+        <%= yield :sidebar %>
+      </div>
+
+.slide
+
+  %h2 div_for
+  .small
+    :htmlcode
+      <% div_for @article do %>
+        <div class="body">
+          <%=h @article.body %>
+        </div>
