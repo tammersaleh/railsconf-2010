@@ -38,7 +38,8 @@
   .small
     :rubycode
       map.resources :users, 
-                    :collection => { :login => [:get, :post], :logout => :get }
+                    :collection => { :login => [:get, :post], 
+                                     :logout => :get }
 
 .slide
 
@@ -97,6 +98,10 @@
 
   %h1 Workshop
   %h2 Extract to a New Controller
+
+.slide
+
+  %h2 Move ArticlesController#flag
 
 .slide
   .background solution3.jpg
