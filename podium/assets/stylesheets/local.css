@@ -42,6 +42,10 @@ h1, h2, h3, h4 {
   text-shadow: none;
 }
 
+.slide.subsection.with_image h1, .slide.subsection.with_image h2, .slide.subsection.with_image h3, .slide.subsection.with_image h4 {
+  color: blue;
+}
+
 .slide table th {
   border-bottom: 5px solid gray;
 }

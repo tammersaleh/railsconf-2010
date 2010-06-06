@@ -2,22 +2,127 @@
 
   %h1 Overall Strategy
 
-.slide.subsection#Small_Chunks
+.slide.subsection#Objectives
+
+  %h1.inc <em>1:</em> Train the client.
+  %h1.inc <em>2:</em> Fix the process.
+  %h1.inc <em>3:</em> Fix the codebase.
+
+.slide.subsection#Train_the_Client
+
+  %h1 <em>1:</em> Train the client.
+
+  %blockquote All of the work you do on the code is useless if the client keeps their bad habits.
+
+.slide
+
+  = image_tag "/images/rework.png", :height => "60%"
+
+.slide
+
+  %h3 Push back on features.
+
+  = image_tag "/images/thumbsdown.jpg", :height => "60%"
+
+.slide
+
+  %h3 Force payment of technical debt.
+  = image_tag "/images/debt.jpg", :height => "60%"
+
+.slide
+
+  %h3 You must be willing to lose the client.
+
+.slide.subsection#Fix_the_Process
+
+  %h1 <em>2:</em> Fix the process.
+
+.slide
+
+  %h1 Client Communication and visibility
+
+.slide
+
+  %h2 Pivotal Tracker
+  = image_tag "/images/pt.png", :height => "60%"
+
+.slide
+
+  = image_tag "/images/basecamp.png", :height => "60%"
+  %h2 Basecamp
+
+
+.slide
+
+  = image_tag "/images/campfire.png", :height => "60%"
+  %h2 Campfire
+
+.slide
+
+  %h2 Record everything!
+  = image_tag "/images/microphone.jpg", :height => "60%"
+
+.slide
+
+  %h2 gitHub
+
+  = image_tag "/images/octocat.png", :height => "60%"
+
+  %h4 Client should subscribe to the RSS feeds
+
+.slide
+  .background standup.jpeg
+
+  %h2 Weekly standups
+
+.slide.subsection#Fix_the_Codebase
+
+  %h1 <em>3:</em> Fix the codebase.
+
+.slide
+
+  %h1 Pair Programming
+
+  = image_tag "/images/pair.jpg", :height => "60%"
+
+.slide
+
+  %h1 Integration Tests
+  %h3 Cover common paths for any area you're about to work on.
+
+.slide
+  
+  %h2 Write <em>integration tests</em> for existing behavior
+  %h2 Write <em>functional/unit tests</em> for added or modified behavior
+  
+.slide
 
   %h1 Small Chunks
 
-.slide.subsection#Communication
+  %h2 Focus on...
+  %ul
+    %li.inc Client Value
+    %li.inc Reducing Technical Debt
+    %li.inc High-yield, Low-impact Pieces
 
-  %h1 Communication
+.slide
+  
+  %h1 Don't get distracted.  
+  
+  %ul
+    %li.inc Record, but don't fix issues as you see them.
+    %li.inc Pivotal Tracker chores, Lighthouse tickes, etc.
+    %li.inc Visibility is key.
 
-.slide.subsection#Visibility
-
-  %h1 Visibility
-
-.slide.subsection#Integration_Tests
-
-  %h1 Integration Tests
-
+.slide
+  
+  %h1 Importance of feature branches
+  
+  %ul
+    %li.inc Isolate the refactoring from master so you can still fight fires while refactoring.
+    %li.inc Also protects you from the whole thing going painfully wrong.
+    %li.inc <tt>git_remote_branch</tt>
+  
 .slide.subsection#Balance_of_refactorings_with_features
   .background bill-dan-balanced-rocks.jpg
 

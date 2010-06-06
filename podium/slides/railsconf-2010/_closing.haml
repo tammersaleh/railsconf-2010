@@ -1,0 +1,140 @@
+.slide.section#Closing
+
+  %h1 ...and we're done!
+
+  = image_tag "/images/first-suspenders.png", :height => "70%"
+
+.slide.subsection#Questions
+  = image_tag "/images/raining_questions.jpg", :height => "100%"
+  
+.slide.subsection#Audience_Submissions
+  
+  %h1 Audience Submissions
+
+  %h3 Step on up!
+  
+.slide.subsection#Anonymous_Submissions
+  
+  %h1 Anonymous Submissions
+  %h3 The halls of shame...
+  
+.slide
+  
+  %h2 You're doing it wrong.
+  
+  :rubycode
+    @photos = @photos[0, @photos.size > limit ? 
+                         limit : 
+                         @photos.size]
+  
+  %h2 Better
+  
+  :rubycode
+    @photos = @photos[0, limit]
+ 
+.slide
+ 
+  %h3 You're doing it wrong.
+  
+  :rubycode
+    @order_type = params[:order_type] ? 
+                    params[:order_type] : 
+                    "New"
+  
+  %h3 Better:
+  
+  :rubycode
+    params[:order_type] ||= "New"
+  
+  %h3 Best: Set the default in the database.  Rails will see it.
+  
+.slide
+ 
+  %h2 You're doing it wrong.
+  
+  :rubycode
+    class Invitation < ActiveRecord::Base
+      def encoded_id
+        self.id*10011981 * 1820062 - 1981
+      end
+      # ...
+  
+.slide
+ 
+  %h2 You're (still) doing it wrong.
+  
+  :rubycode
+      # ...
+      def self.decode_id(id)
+        i = ((id.to_i + 1981)/1820062)/10011981
+        if (i*10011981 * 1820062 - 1981)==id.to_i
+          Invitation.find(i).id rescue false
+        else
+          false
+        end
+      end
+    end
+  
+.slide
+  
+  %h3 Better
+  
+  :rubycode
+    class Invitation < ActiveRecord::Base
+      def self.decoded_id(id)
+        Base64.decode64s(id)
+      end
+  
+      def self.find_by_encoded_id(id)
+        find(decoded_id(id))
+      end
+  
+      def encoded_id
+        Base64.encode64s(id)
+      end
+    end
+.slide
+ 
+  %h2 You're doing it wrong.
+  
+  :rubycode
+    class Invitation < ActiveRecord::Base
+      def encoded_id
+        self.id*10011981 * 1820062 - 1981
+      end
+      # ...
+  
+.slide
+ 
+  %h2 You're (still) doing it wrong.
+  
+  :rubycode
+      # ...
+      def self.decode_id(id)
+        i = ((id.to_i + 1981)/1820062)/10011981
+        if (i*10011981 * 1820062 - 1981)==id.to_i
+          Invitation.find(i).id rescue false
+        else
+          false
+        end
+      end
+    end
+  
+.slide
+  
+  %h3 Better
+  
+  :rubycode
+    class Invitation < ActiveRecord::Base
+      def self.decoded_id(id)
+        Base64.decode64s(id)
+      end
+  
+      def self.find_by_encoded_id(id)
+        find(decoded_id(id))
+      end
+  
+      def encoded_id
+        Base64.encode64s(id)
+      end
+    end

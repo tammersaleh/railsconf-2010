@@ -14,6 +14,8 @@
 
   %h1 The 15 minute code review
 
+  = image_tag "/images/stopwatch.jpg", :height => "50%"
+
 .slide
   .background model_city.jpg
   %h1 <em>1:</em> Models
@@ -49,29 +51,14 @@
 
 .slide
 
-  %h3 General style issues.
+  %h2 Lots of Raw SQL
 
-  .smaller
-    :rubycode
-      class Like < ActiveRecord::Base
-        def self.gift_likes(gift_id = nil)
-          if gift_id
-            likes = find(:all, 
-              :conditions => ["gift_id = ?",gift_id],
-              :select => "count(id) as count, gift_id, 
-                          photoset_id, preference as likes",
-              :group => "gift_id,photoset_id,preference",
-              :order => "gift_id, photoset_id")
-          else
-            likes = find(:all, 
-              :select => "count(id) as count, gift_id, 
-                          photoset_id, preference as likes",
-              :group => "gift_id,photoset_id,preference",
-              :order => "gift_id, photoset_id")
-          end
-          return likes
-        end
-      end
+  :rubycode
+    connection.update_sql("
+      UPDATE accounts
+      SET #{opts[:from]} = #{opts[:from]} - 1
+      WHERE accounts.id = #{connection.quote(self.id)}
+        AND #{opts[:from]} >= 1;")
 
 .slide
   .background giant-Nintendo-NES_controller_DIY.jpg
@@ -121,11 +108,12 @@
   %div
     %h2 Monolithic controllers
 
-    %h3 (Three controllers and over 100 actions)
+    %h3 (Three controllers and a zillion actions)
 
 .slide
+  .background open-gate.jpg
 
-  %h3 Custom authentication
+  %h1 Custom authentication 
 
 .slide
 
@@ -135,7 +123,57 @@
 
 .slide
 
-  %h3 ...
+  %h3 PHP code?
+
+  .smaller
+    :rubycode
+      <% if flash[:create_form] && flash[:create_form][:status] == :fail 
+           flash_error = flash[:create_form][:reason]
+           flash_style = ''
+         elsif flash[:paypal_purchase] && flash[:paypal_purchase][:status] == :success && flash[:prize_info]
+           flash_error = 'Your votes have been added to your account, now press "Create your contest" to start your prize!'
+           flash_style = ''
+         elsif flash[:card_purchase] && flash[:card_purchase][:status] == :success && flash[:prize_info]
+           flash_error = 'Your votes have been added to your account, now press "Create your contest" to start your prize!'
+           flash_style = ''
+         else
+           flash_error = ''
+           flash_style = 'style="display:none;"'
+         end  -%>      
+            <p class="main error"<%= flash_style %>><%= flash_error %></p>
+      
+.slide
+
+  %h2 Inconsistent file structure
+
+  %h3 <tt>app/views/www/home/list.rhtml</tt>
+
+.slide
+
+  %h2 Poor HTML
+
+  .smaller
+    :htmlcode
+      <div id="login_modal" style="display:none;"> <form 
+      method="post" id="login_form" action="/auth/login">
+      <ul id="pp_login_form" class="clearfix"> <li class="first"
+      ><h3>Log In</h3></li> <li><p>user/email:</p></li> <
+      li><input type="text" value="" maxlength="48" name="login" 
+      id="login"/></li> <li><p>password:</p></li> <li>
+      <input type="password" value="" maxlength="48" 
+      name="password" id="password"/></li> <li><
+      input type="image" src="/images/buttons/btn_mini_log_in.png"
+      /></li> </ul> </form></div>
+  
+
+.slide
+
+  %h2 Layout code in the views
+
+.slide
+  .background duplication.jpg
+
+  %h2 Duplication
 
 .slide
   .background books.jpg
@@ -144,7 +182,15 @@
 
 .slide
 
-  %h3 ...
+  %h2 Reinventing the Wheel
+
+  = image_tag "/images/stone-wheel.jpeg", :height => "60%"
+
+.slide
+
+  %h3 Lots of Duck Punching
+
+  = image_tag "/images/duck-punching.jpg", :height => "60%"
 
 .slide
 
@@ -164,21 +210,42 @@
     ...
 
 .slide
+  .background peewees-bike.jpg
+
+  %h1 Feature bloat
+
+.slide
+
+  %h1 Bad Ruby Style
+
+.slide
+
+  %h1 Gratuitous Metaprogramming
+
+  :rubycode
+    def create_method(name, &block)
+      self.class.send(:define_method, name, &block)
+    end
+    ...
+    # My God, Why???
+    post.create_method(:voters) {o.voters} 
+
+.slide
 
   = image_tag "/images/burning_eyes.jpg", :height => "100%"
-  
+
 .slide.section#Causes
 
+  %h1 Causes
+
+.slide
+
   %h1 How did the project get here?
-  %h2 Technical, process, or personal reasons?
+  %h2 Technical, Process, or Personal reasons?
 
 .slide
 
-  %h1 Technical reasons
-
-.slide
-
-  %h2 Poor developers?
+  %h1 Technical Reasons:
 
 .slide
 
@@ -186,7 +253,11 @@
 
 .slide
 
-  %h2 Lack of constant refactoring?
+  %h2 Poor developers?
+
+.slide
+
+  %h1 Process Reasons:
 
 .slide
 
@@ -194,37 +265,37 @@
 
 .slide
 
-  %h1 Non-technical reasons
+  %h2 Lack of constant refactoring?
 
 .slide
 
-  %h2 Process?
+  %h1 Personality Reasons:
 
 .slide
 
-  %h2 Personality?
+  %h2 Lack of focus on quality
 
 .slide
 
-  %h2 Lack of focus on quality?
-
-.slide
-
-  %h2 Arbitrary deadlines?
+  %h2 Artificial deadlines?
 
 .slide.subsection#The_Big_Question
+  .background questions.jpg
 
-  %h3 The <em>Big</em> Question:
-  %h1.inc Should you take this project?
-
-.slide
-
-  %h2 Are the technical issues surmountable?  Are the bad developers still there?
+  %div
+    %h3 The <em>Big</em> Question:
+    %h1.inc Should you take this project?
 
 .slide
   .background superman.jpg
 
-  %h2 Do you really believe you can fix the <em>non technical issues</em>?
+  %h1 Can you fix this?
+
+.slide
+
+  %h3 Are the technical issues surmountable?  
+  %h3 Are the bad developers still there?  Are they trainable?
+  %h3 Do you really believe you can fix the <em>non technical issues</em>?
 
 .slide
   .background hiding_elephant.jpg
@@ -246,19 +317,3 @@
 
   %h1 How much?
 
-.slide.subsection#Objectives
-
-  %h1 Objectives
-
-.slide
-
-  
-  %h2 Un-fuck the codebase.
-
-.slide
-
-  %h2 Train the client.
-
-.slide
-
-  %h2 Fix the process.
