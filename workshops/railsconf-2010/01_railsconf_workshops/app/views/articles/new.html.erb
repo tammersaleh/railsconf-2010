@@ -1,0 +1,14 @@
+<% @page_title = "New Article" %>
+
+<h1>New Article</h1>
+
+<div class="main">
+  <% form_for(@article) do |form| %>
+    <%= form.error_messages %>
+
+    <%= render :partial => 'form', :locals => { :form => form } %>
+    <fieldset class="buttons">
+      <%= form.submit 'Create' %> <%= link_to 'Cancel', articles_path %>
+    </fieldset>
+  <% end %>
+</div>

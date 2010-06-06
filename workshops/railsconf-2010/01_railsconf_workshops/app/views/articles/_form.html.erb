@@ -1,0 +1,18 @@
+<fieldset>
+  <p>
+    <%= form.label :title %><br />
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :body %><br />
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.label :state_id %><br />
+    <%= form.select :state_id, State.all.collect {|p| [ p.name, p.id ] }, :include_blank => true %>
+  </p>
+  <p>
+    <%= form.label :category_id %><br />
+    <%= form.select :category_id, Category.all.collect {|p| [ p.name, p.id ] }, :include_blank => true %>
+  </p>
+</fieldset>

@@ -1,0 +1,308 @@
+# Logfile created on Sun Jun 06 18:55:59 -0400 2010  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mArticle Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `articles`[0m
+  [4;36;1mState Columns (0.0ms)[0m   [0;1mMysql::Error: Table 'rcworkshop_test.states' doesn't exist: SHOW FIELDS FROM `states`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mState Columns (0.0ms)[0m   [0mMysql::Error: Table 'rcworkshop_test.states' doesn't exist: SHOW FIELDS FROM `states`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mState Columns (0.0ms)[0m   [0;1mMysql::Error: Table 'rcworkshop_test.states' doesn't exist: SHOW FIELDS FROM `states`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mState Columns (0.0ms)[0m   [0mMysql::Error: Table 'rcworkshop_test.states' doesn't exist: SHOW FIELDS FROM `states`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mState Columns (0.0ms)[0m   [0;1mMysql::Error: Table 'rcworkshop_test.states' doesn't exist: SHOW FIELDS FROM `states`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Columns (0.0ms)[0m   [0mMysql::Error: Table 'rcworkshop_test.categories' doesn't exist: SHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mState Columns (0.0ms)[0m   [0;1mMysql::Error: Table 'rcworkshop_test.states' doesn't exist: SHOW FIELDS FROM `states`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Columns (0.0ms)[0m   [0mMysql::Error: Table 'rcworkshop_test.categories' doesn't exist: SHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mArticle Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `articles`[0m
+  [4;35;1mState Columns (0.0ms)[0m   [0mMysql::Error: Table 'rcworkshop_test.states' doesn't exist: SHOW FIELDS FROM `states`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mState Columns (0.0ms)[0m   [0;1mMysql::Error: Table 'rcworkshop_test.states' doesn't exist: SHOW FIELDS FROM `states`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mState Columns (0.0ms)[0m   [0mMysql::Error: Table 'rcworkshop_test.states' doesn't exist: SHOW FIELDS FROM `states`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing ArticlesController#index (for 0.0.0.0 at 2010-06-06 18:57:03) [GET]
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `articles` [0m
+Rendering template within layouts/application
+Rendering articles/index
+  [4;35;1mState Load (0.0ms)[0m   [0mMysql::Error: Table 'rcworkshop_test.states' doesn't exist: SELECT * FROM `states` [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing ArticlesController#new (for 0.0.0.0 at 2010-06-06 18:57:03) [GET]
+Rendering template within layouts/application
+Rendering articles/new
+  [4;36;1mState Load (0.0ms)[0m   [0;1mMysql::Error: Table 'rcworkshop_test.states' doesn't exist: SELECT * FROM `states` [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mState Columns (0.0ms)[0m   [0mMysql::Error: Table 'rcworkshop_test.states' doesn't exist: SHOW FIELDS FROM `states`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mState Columns (0.0ms)[0m   [0;1mMysql::Error: Table 'rcworkshop_test.states' doesn't exist: SHOW FIELDS FROM `states`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mArticle Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `articles`[0m
+  [4;36;1mState Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `states`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mState Create (0.3ms)[0m   [0;1mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-06 22:57:37', '2010-06-06 22:57:37')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mCategory Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mCategory Create (0.2ms)[0m   [0;1mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-06 22:57:37', '2010-06-06 22:57:37')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-06 22:57:37', 'title', 'body', '2010-06-06 22:57:37', 1, 1)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mState Create (0.2ms)[0m   [0;1mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-06 22:57:37', '2010-06-06 22:57:37')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCategory Create (0.1ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-06 22:57:37', '2010-06-06 22:57:37')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.2ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-06 22:57:37', 'title', 'body', '2010-06-06 22:57:37', 2, 2)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mState Create (0.2ms)[0m   [0mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-06 22:57:37', '2010-06-06 22:57:37')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mCategory Create (0.2ms)[0m   [0;1mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-06 22:57:37', '2010-06-06 22:57:37')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-06 22:57:37', 'title', 'body', '2010-06-06 22:57:37', 3, 3)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mState Create (0.2ms)[0m   [0;1mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-06 22:57:37', '2010-06-06 22:57:37')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCategory Create (0.1ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-06 22:57:37', '2010-06-06 22:57:37')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.2ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-06 22:57:37', 'title', 'body', '2010-06-06 22:57:37', 4, 4)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mState Create (0.2ms)[0m   [0mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('review', '2010-06-06 22:57:37', '2010-06-06 22:57:37')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mState Create (0.2ms)[0m   [0;1mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-06 22:57:37', '2010-06-06 22:57:37')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCategory Create (0.1ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-06 22:57:37', '2010-06-06 22:57:37')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.2ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-06 22:57:37', 'title', 'body', '2010-06-06 22:57:37', 5, 6)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mState Load (0.3ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`name` = 'review') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Update (0.2ms)[0m   [0;1mUPDATE `articles` SET `updated_at` = '2010-06-06 22:57:37', `state_id` = 5 WHERE `id` = 5[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mArticle Load (0.2ms)[0m   [0;1mSELECT * FROM `articles` WHERE (`articles`.`id` = 5) [0m
+  [4;35;1mState Load (0.1ms)[0m   [0mSELECT * FROM `states` WHERE (`states`.`id` = 5) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCategory Create (0.2ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-06 22:57:37', '2010-06-06 22:57:37')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mState Create (0.2ms)[0m   [0;1mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-06 22:57:37', '2010-06-06 22:57:37')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCategory Create (0.3ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-06 22:57:40', '2010-06-06 22:57:40')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mState Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mState Create (0.2ms)[0m   [0mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-06 22:57:40', '2010-06-06 22:57:40')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mArticle Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `articles`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `articles` [0m
+
+
+Processing ArticlesController#create (for 0.0.0.0 at 2010-06-06 18:57:40) [POST]
+  Parameters: {"article"=>{"category_id"=>7, "state_id"=>8}}
+  [4;35;1mSQL (0.4ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.2ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-06 22:57:40', NULL, NULL, '2010-06-06 22:57:40', 7, 8)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles
+Completed in 7ms (DB: 6) | 302 Found [http://test.host/articles?article%5Bcategory_id%5D=7&article%5Bstate_id%5D=8]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `articles` [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mState Create (0.2ms)[0m   [0;1mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-06 22:57:40', '2010-06-06 22:57:40')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCategory Create (0.2ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-06 22:57:40', '2010-06-06 22:57:40')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.2ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-06 22:57:40', 'title', 'body', '2010-06-06 22:57:40', 8, 9)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `articles` [0m
+
+
+Processing ArticlesController#destroy (for 0.0.0.0 at 2010-06-06 18:57:40) [DELETE]
+  Parameters: {"id"=>"7"}
+  [4;35;1mArticle Load (0.2ms)[0m   [0mSELECT * FROM `articles` WHERE (`articles`.`id` = 7) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Destroy (0.2ms)[0m   [0mDELETE FROM `articles` WHERE `id` = 7[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles
+Completed in 2ms (DB: 3) | 302 Found [http://test.host/articles/7]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `articles` [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mState Create (0.2ms)[0m   [0mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('review', '2010-06-06 22:57:40', '2010-06-06 22:57:40')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mState Create (0.1ms)[0m   [0;1mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('published', '2010-06-06 22:57:40', '2010-06-06 22:57:40')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCategory Create (0.2ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-06 22:57:40', '2010-06-06 22:57:40')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.2ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-06 22:57:40', 'title', 'body', '2010-06-06 22:57:40', 9, 11)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing ArticlesController#flag (for 0.0.0.0 at 2010-06-06 18:57:40) [POST]
+  Parameters: {"id"=>"8"}
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `articles` WHERE (`articles`.`id` = 8) [0m
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` WHERE (`states`.`name` = 'review') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Update (0.3ms)[0m   [0mUPDATE `articles` SET `updated_at` = '2010-06-06 22:57:40', `state_id` = 10 WHERE `id` = 8[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles/8
+Completed in 5ms (DB: 3) | 302 Found [http://test.host/articles/8/flag]
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM `articles` WHERE (`articles`.`id` = 8) [0m
+  [4;36;1mState Load (0.1ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`id` = 10) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mState Create (0.2ms)[0m   [0;1mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-06 22:57:40', '2010-06-06 22:57:40')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCategory Create (0.2ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-06 22:57:40', '2010-06-06 22:57:40')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.2ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-06 22:57:40', 'title', 'body', '2010-06-06 22:57:40', 10, 12)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing ArticlesController#edit (for 0.0.0.0 at 2010-06-06 18:57:40) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mArticle Load (0.2ms)[0m   [0;1mSELECT * FROM `articles` WHERE (`articles`.`id` = 9) [0m
+Rendering template within layouts/application
+Rendering articles/edit
+  [4;35;1mState Load (0.3ms)[0m   [0mSELECT * FROM `states` [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendered articles/_form (4.4ms)
+Rendered shared/_flashes (0.6ms)
+Rendered shared/_javascript (1.8ms)
+Completed in 15ms (View: 13, DB: 3) | 200 OK [http://test.host/articles/9/edit]
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing ArticlesController#index (for 0.0.0.0 at 2010-06-06 18:57:40) [GET]
+  [4;35;1mArticle Load (0.2ms)[0m   [0mSELECT * FROM `articles` [0m
+Rendering template within layouts/application
+Rendering articles/index
+  [4;36;1mState Load (0.2ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.5ms)
+Completed in 8ms (View: 7, DB: 1) | 200 OK [http://test.host/articles]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing ArticlesController#new (for 0.0.0.0 at 2010-06-06 18:57:40) [GET]
+Rendering template within layouts/application
+Rendering articles/new
+  [4;36;1mState Load (0.3ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendered articles/_form (3.2ms)
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.4ms)
+Completed in 73ms (View: 8, DB: 1) | 200 OK [http://test.host/articles/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mState Create (0.2ms)[0m   [0mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-06 22:57:40', '2010-06-06 22:57:40')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mCategory Create (0.2ms)[0m   [0;1mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-06 22:57:40', '2010-06-06 22:57:40')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-06 22:57:40', 'title', 'body', '2010-06-06 22:57:40', 11, 13)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing ArticlesController#show (for 0.0.0.0 at 2010-06-06 18:57:40) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM `articles` WHERE (`articles`.`id` = 10) [0m
+Rendering template within layouts/application
+Rendering articles/show
+  [4;36;1mState Load (0.2ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`id` = 13) [0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 11) [0m
+Rendered shared/_flashes (0.1ms)
+Rendered shared/_javascript (1.4ms)
+Completed in 8ms (View: 6, DB: 2) | 200 OK [http://test.host/articles/10]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mState Create (0.2ms)[0m   [0mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-06 22:57:40', '2010-06-06 22:57:40')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mCategory Create (0.2ms)[0m   [0;1mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-06 22:57:40', '2010-06-06 22:57:40')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-06 22:57:40', 'title', 'body', '2010-06-06 22:57:40', 12, 14)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing ArticlesController#update (for 0.0.0.0 at 2010-06-06 18:57:40) [PUT]
+  Parameters: {"article"=>{}, "id"=>"11"}
+  [4;35;1mArticle Load (0.2ms)[0m   [0mSELECT * FROM `articles` WHERE (`articles`.`id` = 11) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles
+Completed in 3ms (DB: 2) | 302 Found [http://test.host/articles/11?]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m

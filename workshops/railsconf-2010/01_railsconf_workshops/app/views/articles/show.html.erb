@@ -1,0 +1,26 @@
+<% @page_title = h(@article.title) %>
+
+<h1><%=h @article.title %></h1>
+
+<div class="main with_sidebar">
+  <div class="article">
+    <div class="body">
+      <%=h @article.body %>
+    </div>
+
+    <div class="state">
+      <b>State:</b>
+      <%=h @article.state.name %>
+    </div>
+
+    <div class="category">
+      <b>Category:</b>
+      <%=h @article.category.name %>
+    </div>
+  </div>
+</div>
+
+<div class="sidebar">
+  <%= link_to 'Flag Article', flag_article_path(@article), :method => :post, :class => "orange" %>
+  <%= link_to 'Back', articles_path %>
+</div>

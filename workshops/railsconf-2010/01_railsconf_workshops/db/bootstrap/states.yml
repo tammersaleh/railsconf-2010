@@ -1,0 +1,8 @@
+draft:
+ name: draft
+
+review:
+  name: review
+
+published:
+     name: published

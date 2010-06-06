@@ -1,0 +1,105 @@
+body {
+  margin: 15px 0px 15px 15px;
+  background: #f1f1f1;
+}
+
+.main {
+  margin: 0px;
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #e3e3e3;
+  margin-right: 15px;
+}
+
+.main.with_sidebar {
+  float: left;
+  width: 70%;
+}
+
+.sidebar {
+  float: left;
+  width: 25%;
+}
+
+.sidebar a {
+  display: block;
+  padding: 5px;
+  margin-top: 7px;
+}
+
+form.search {
+  margin-bottom: 10px;
+}
+
+form.search * {
+  display: inline;
+}
+
+form {
+  margin: 0 0 1em 0;
+}
+form p { margin: 0 0 1em 0; list-style-position: outside; }
+
+.article {
+  margin-bottom: 15px;
+}
+
+.article .body {
+  margin-bottom: 15px;
+}
+
+.sidebar a, .sidebar a:visited,
+.action a {
+  width: 70%;
+  background: #222 url(/images/alert-overlay.png) repeat-x; 
+  display: inline-block; 
+  padding: 5px 10px 6px; 
+  color: #fff; 
+  text-decoration: none;
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  position: relative;
+  cursor: pointer;
+}
+
+.sidebar a:hover, .action a:hover { 
+  background-color: #111; 
+  color: #fff; 
+}
+.sidebar a:active, .action a:hover { 
+  top: 1px; 
+}
+.sidebar a.small, .sidebar a.small:visited,
+.action a.small, .action a.small:visited { 
+  font-size: 11px; 
+  padding: 0; 
+}
+.sidebar a, .sidebar a:visited,
+.action a, .action a:visited,
+.sidebar a.medium, .sidebar a.medium:visited {
+  font-size: 13px; 
+  font-weight: bold; 
+  line-height: 1; 
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25); 
+}
+.sidebar a.large, .sidebar a.large:visited {
+  font-size: 14px; 
+  padding: 8px 14px 9px; 
+}
+
+a.green, a.green:visited { background-color: #91bd09; }
+a.green:hover { background-color: #749a02; }
+a.blue, a.blue:visited { background-color: #2daebf; }
+a.blue:hover { background-color: #007d9a; }
+a.red, a.red:visited { background-color: #e33100; }
+a.red:hover { background-color: #872300; }
+a.magenta, a.magenta:visited { background-color: #a9014b; }
+a.magenta:hover { background-color: #630030; }
+a.orange, a.orange:visited { background-color: #ff5c00; }
+a.orange:hover { background-color: #d45500; }
+a.yellow, a.yellow:visited { background-color: #ffb515; }
+a.yellow:hover { background-color: #fc9200; }

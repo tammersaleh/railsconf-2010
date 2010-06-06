@@ -2,10 +2,15 @@ h3. Getting Started
 
 After downloading and expanding the code, change into the expanded directory and run the following commands
 
-<pre><code>rake db:create:all
+<pre><code>rake gems:install
+rake db:create:all
 rake db:migrate
 rake db:bootstrap:load
 </code></pre>
+
+To make sure that you can run the application run
+
+<pre><code>rake</code></pre>
 
 All of the workshops use the same codebase. At the end of each workshop you should have working code.  Each workshop is independant, so if at the start of a new workshop you find yourself without working code, simply download the original code again and start over.
 

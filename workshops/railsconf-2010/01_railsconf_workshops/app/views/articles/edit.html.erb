@@ -1,0 +1,15 @@
+<% @page_title = "Edit Article" %>
+
+<h1>Edit article</h1>
+
+<div class="main">
+  <% form_for(@article) do |form| %>
+    <%= form.error_messages %>
+
+    <%= render :partial => 'form', :locals => { :form => form } %>
+    <fieldset class="buttons">
+      <%= form.submit 'Update' %>
+      <%= link_to 'Cancel', articles_path %>
+    </fieldset>
+  <% end %>
+</div>
