@@ -98,26 +98,98 @@
 
 .slide
 
-  %h3 Delete the tables
-  %h3 Delete the Category and State models
-  %h3 Refactor the Article model
+  %h2 Delete the tables
+  .small
+    :rubycode
+      # script/generate migration delete_states_and_categories
+      class DeleteStatesAndCategories < ActiveRecord::Migration
+        def self.up
+          add_column :articles, :state, :string, :null => false
+          update "update articles, states set articles.state=states.name 
+                  where articles.state_id=states.id"
+          drop_table :states
 
 .slide
 
-  :rubycode
-    class Article < ActiveRecord::Base
-      STATES = %w(draft review published archived) 
-      CATEGORIES = %w(tips faqs misc)
+  %h2 Delete the Category and State models and factories
+  :code
+    git rm app/models/state.rb
+    git rm test/unit/state_test.rb
+    git rm db/bootstrap/states.yml
+    git rm app/models/category.rb
+    git rm test/unit/category_test.rb
+    git rm db/bootstrap/categories.yml
 
-      validates_presence_of :state, :category
-      validates_inclusion_of :state, :in => STATES
-      validates_inclusion_of :category, :in => CATEGORIES
+.slide
 
-      STATES+CATEGORIES.each do |name|
-        class << self
-          define_method "#{name}" do
-            name
-          end
+  %h2 Refactor the Article model and tests
+  .small
+    :rubycode
+      class Article < ActiveRecord::Base
+        STATES = %w(draft review published) 
+        CATEGORIES = %w(Hiking Skiing)
+  
+        validates_presence_of :state, :category
+        validates_inclusion_of :state, :in => STATES
+        validates_inclusion_of :category, :in => CATEGORIES
+  
+        def flag!
+          self.update_attributes!(:state => "review")
         end
       end
-    end
+
+.slide
+
+  %h2 Refactor the views
+  :htmlcode
+    <div class="state">
+      <b>State:</b>
+      <%=h @article.state %>
+    </div>
+
+.slide
+
+  %h2 Refactor the views
+  :htmlcode
+    <p>
+      <%= form.label :state %><br />
+      <%= form.select :state, 
+                      Article::STATES, 
+                      :include_blank => true %>
+    </p>
+
+.slide
+
+  %h2 Refactor the views
+  .small
+    :htmlcode
+      <div class="main with_sidebar">
+        <% form_tag articles_path, { :class => "search", :method => :get } do %>
+          <%= label_tag "state" %>
+          <%= select_tag "state", 
+                         "<option></option>"+
+                         options_for_select(Article::STATES) %>
+
+.slide
+
+  %h2 Refactor the Articles controller and tests
+  .small
+    :rubycode
+      def index
+        conditions = {}
+        conditions[:category] = params[:category] if params[:category].present?
+        conditions[:state] = params[:state] if params[:state].present?
+
+.side
+
+  %h2 Cucumber
+  :code
+    Given the following articles exist:
+      | title              | state     |
+      | Draft Article      | draft     |
+      | Review Article     | review    |
+      | Published Article  | published |
+
+.slide
+
+  %h1 Blank
