@@ -1,3 +1,5 @@
+$LOAD_PATH << File.dirname(__FILE__) + "/../../../../treetop-1.4.5/lib"
+
 begin
   require 'treetop'
   require 'treetop/runtime'
