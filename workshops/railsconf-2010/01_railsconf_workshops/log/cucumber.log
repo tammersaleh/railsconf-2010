@@ -354,3 +354,359 @@ Rendered shared/_flashes (0.4ms)
 Rendered shared/_javascript (1.4ms)
 Completed in 7ms (View: 6, DB: 1) | 200 OK [http://www.example.com/articles/19]
   [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mState Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `states`[0m
+  [4;35;1mCategory Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mArticle Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `articles`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCategory Create (0.3ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('Hiking', '2010-06-07 03:55:37', '2010-06-07 03:55:37')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mState Create (0.2ms)[0m   [0;1mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `articles` [0m
+Rendering template within layouts/application
+Rendering articles/index
+  [4;35;1mState Load (0.3ms)[0m   [0mSELECT * FROM `states` [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendered shared/_flashes (8.0ms)
+Rendered shared/_javascript (2.1ms)
+Completed in 21ms (View: 18, DB: 5) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /articles/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing ArticlesController#new (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+Rendering template within layouts/application
+Rendering articles/new
+  [4;35;1mState Load (0.3ms)[0m   [0mSELECT * FROM `states` [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM `categories` [0m
+Rendered articles/_form (6.0ms)
+Rendered shared/_flashes (0.5ms)
+Rendered shared/_javascript (1.4ms)
+Completed in 14ms (View: 14, DB: 0) | 200 OK [http://www.example.com/articles/new]
+REQUESTING PAGE: POST /articles with {"article"=>{"body"=>"", "title"=>"", "category_id"=>"13", "state_id"=>"15"}, "commit"=>"Create"} and HTTP headers {"HTTP_REFERER"=>"/articles/new"}
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2010-06-06 23:55:38) [POST]
+  Parameters: {"article"=>{"title"=>"", "body"=>"", "category_id"=>"13", "state_id"=>"15"}, "commit"=>"Create"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.3ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-07 03:55:38', '', '', '2010-06-07 03:55:38', 13, 15)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/articles
+Completed in 4ms (DB: 0) | 302 Found [http://www.example.com/articles]
+REQUESTING PAGE: GET http://www.example.com/articles with {} and HTTP headers {"HTTP_REFERER"=>"/articles"}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `articles` [0m
+Rendering template within layouts/application
+Rendering articles/index
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mState Load (0.3ms)[0m   [0mSELECT * FROM `states` WHERE (`states`.`id` = 15) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 13) [0m
+Rendered shared/_flashes (0.4ms)
+Rendered shared/_javascript (1.3ms)
+Completed in 12ms (View: 10, DB: 1) | 200 OK [http://www.example.com/articles]
+  [4;35;1mSQL (4.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mCategory Create (0.2ms)[0m   [0;1mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('Hiking', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mState Create (0.2ms)[0m   [0mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`name` = 'Hiking') LIMIT 1[0m
+  [4;36;1mState Load (0.2ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`name` = 'draft') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.3ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-07 03:55:38', 'title', 'body', '2010-06-07 03:55:38', 14, 16)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `articles` [0m
+Rendering template within layouts/application
+Rendering articles/index
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` WHERE (`states`.`id` = 16) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 14) [0m
+Rendered shared/_flashes (0.2ms)
+Rendered shared/_javascript (1.5ms)
+Completed in 11ms (View: 9, DB: 7) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /articles/13/edit with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing ArticlesController#edit (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  Parameters: {"id"=>"13"}
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM `articles` WHERE (`articles`.`id` = 13) [0m
+Rendering template within layouts/application
+Rendering articles/edit
+  [4;36;1mState Load (0.3ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+Rendered articles/_form (3.6ms)
+Rendered shared/_flashes (0.4ms)
+Rendered shared/_javascript (1.4ms)
+Completed in 11ms (View: 9, DB: 1) | 200 OK [http://www.example.com/articles/13/edit]
+REQUESTING PAGE: POST /articles/13 with {"article"=>{"body"=>"body", "title"=>"New Title", "category_id"=>"14", "state_id"=>"16"}, "commit"=>"Update", "_method"=>"put"} and HTTP headers {"HTTP_REFERER"=>"/articles/13/edit"}
+
+
+Processing ArticlesController#update (for 127.0.0.1 at 2010-06-06 23:55:38) [PUT]
+  Parameters: {"article"=>{"title"=>"New Title", "body"=>"body", "category_id"=>"14", "state_id"=>"16"}, "commit"=>"Update", "id"=>"13"}
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `articles` WHERE (`articles`.`id` = 13) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Update (0.3ms)[0m   [0;1mUPDATE `articles` SET `updated_at` = '2010-06-07 03:55:38', `title` = 'New Title' WHERE `id` = 13[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/articles
+Completed in 4ms (DB: 1) | 302 Found [http://www.example.com/articles/13]
+REQUESTING PAGE: GET http://www.example.com/articles with {} and HTTP headers {"HTTP_REFERER"=>"/articles/13"}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  [4;36;1mArticle Load (0.7ms)[0m   [0;1mSELECT * FROM `articles` [0m
+Rendering template within layouts/application
+Rendering articles/index
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` WHERE (`states`.`id` = 16) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 14) [0m
+Rendered shared/_flashes (0.4ms)
+Rendered shared/_javascript (1.6ms)
+Completed in 12ms (View: 10, DB: 1) | 200 OK [http://www.example.com/articles]
+  [4;35;1mSQL (0.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mState Load (0.3ms)[0m   [0mSELECT * FROM `states` WHERE (`states`.`name` = 'draft') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mState Create (0.2ms)[0m   [0mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mCategory Create (0.2ms)[0m   [0;1mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-07 03:55:38', 'Draft Article', 'body', '2010-06-07 03:55:38', 15, 17)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` WHERE (`states`.`name` = 'review') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mState Create (0.2ms)[0m   [0mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('review', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mCategory Create (0.2ms)[0m   [0;1mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-07 03:55:38', 'Review Article', 'body', '2010-06-07 03:55:38', 16, 18)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` WHERE (`states`.`name` = 'published') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mState Create (0.2ms)[0m   [0mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('published', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mCategory Create (0.2ms)[0m   [0;1mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-07 03:55:38', 'Published Article', 'body', '2010-06-07 03:55:38', 17, 19)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM `articles` [0m
+Rendering template within layouts/application
+Rendering articles/index
+  [4;36;1mState Load (0.2ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM `categories` [0m
+  [4;36;1mState Load (0.2ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`id` = 17) [0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 15) [0m
+  [4;36;1mState Load (0.2ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`id` = 18) [0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 16) [0m
+  [4;36;1mState Load (0.3ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`id` = 19) [0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 17) [0m
+Rendered shared/_flashes (0.2ms)
+Rendered shared/_javascript (1.4ms)
+Completed in 19ms (View: 17, DB: 7) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /articles with {"category"=>"", "commit"=>"Go", "state"=>"17"} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  Parameters: {"category"=>"", "commit"=>"Go", "state"=>"17"}
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `articles` WHERE (`articles`.`state_id` = '17') [0m
+Rendering template within layouts/application
+Rendering articles/index
+  [4;35;1mState Load (0.3ms)[0m   [0mSELECT * FROM `states` [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` WHERE (`states`.`id` = 17) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 15) [0m
+Rendered shared/_flashes (0.4ms)
+Rendered shared/_javascript (1.4ms)
+Completed in 12ms (View: 10, DB: 1) | 200 OK [http://www.example.com/articles]
+REQUESTING PAGE: GET /articles with {"category"=>"", "commit"=>"Go", "state"=>"18"} and HTTP headers {"HTTP_REFERER"=>"/articles"}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  Parameters: {"category"=>"", "commit"=>"Go", "state"=>"18"}
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM `articles` WHERE (`articles`.`state_id` = '18') [0m
+Rendering template within layouts/application
+Rendering articles/index
+  [4;36;1mState Load (0.3ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` [0m
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`id` = 18) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 16) [0m
+Rendered shared/_flashes (0.4ms)
+Rendered shared/_javascript (1.4ms)
+Completed in 15ms (View: 12, DB: 2) | 200 OK [http://www.example.com/articles]
+REQUESTING PAGE: GET /articles with {"category"=>"", "commit"=>"Go", "state"=>"19"} and HTTP headers {"HTTP_REFERER"=>"/articles"}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  Parameters: {"category"=>"", "commit"=>"Go", "state"=>"19"}
+  [4;36;1mArticle Load (0.9ms)[0m   [0;1mSELECT * FROM `articles` WHERE (`articles`.`state_id` = '19') [0m
+Rendering template within layouts/application
+Rendering articles/index
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` WHERE (`states`.`id` = 19) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 17) [0m
+Rendered shared/_flashes (0.4ms)
+Rendered shared/_javascript (1.4ms)
+Completed in 87ms (View: 10, DB: 2) | 200 OK [http://www.example.com/articles]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`name` = 'Hiking') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCategory Create (0.2ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('Hiking', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mState Create (0.2ms)[0m   [0;1mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-07 03:55:38', 'Hiking Article', 'body', '2010-06-07 03:55:38', 18, 20)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`name` = 'Skiing') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCategory Create (0.2ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('Skiing', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mState Create (0.2ms)[0m   [0;1mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-07 03:55:38', 'Skiing Article', 'body', '2010-06-07 03:55:38', 19, 21)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM `articles` [0m
+Rendering template within layouts/application
+Rendering articles/index
+  [4;36;1mState Load (0.3ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM `categories` [0m
+  [4;36;1mState Load (0.2ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`id` = 20) [0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 18) [0m
+  [4;36;1mState Load (0.2ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`id` = 21) [0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 19) [0m
+Rendered shared/_flashes (0.2ms)
+Rendered shared/_javascript (1.6ms)
+Completed in 17ms (View: 14, DB: 6) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /articles with {"category"=>"18", "commit"=>"Go", "state"=>""} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  Parameters: {"category"=>"18", "commit"=>"Go", "state"=>""}
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `articles` WHERE (`articles`.`category_id` = '18') [0m
+Rendering template within layouts/application
+Rendering articles/index
+  [4;35;1mState Load (0.3ms)[0m   [0mSELECT * FROM `states` [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` WHERE (`states`.`id` = 20) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 18) [0m
+Rendered shared/_flashes (0.4ms)
+Rendered shared/_javascript (1.4ms)
+Completed in 12ms (View: 10, DB: 1) | 200 OK [http://www.example.com/articles]
+REQUESTING PAGE: GET /articles with {"category"=>"19", "commit"=>"Go", "state"=>""} and HTTP headers {"HTTP_REFERER"=>"/articles"}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  Parameters: {"category"=>"19", "commit"=>"Go", "state"=>""}
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM `articles` WHERE (`articles`.`category_id` = '19') [0m
+Rendering template within layouts/application
+Rendering articles/index
+  [4;36;1mState Load (0.2ms)[0m   [0;1mSELECT * FROM `states` [0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM `categories` [0m
+  [4;36;1mState Load (0.2ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`id` = 21) [0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 19) [0m
+Rendered shared/_flashes (76.5ms)
+Rendered shared/_javascript (1.6ms)
+Completed in 88ms (View: 86, DB: 1) | 200 OK [http://www.example.com/articles]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mState Create (0.2ms)[0m   [0mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('review', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mState Create (0.3ms)[0m   [0;1mINSERT INTO `states` (`name`, `created_at`, `updated_at`) VALUES('draft', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCategory Create (0.2ms)[0m   [0mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES('category', '2010-06-07 03:55:38', '2010-06-07 03:55:38')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.2ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `body`, `updated_at`, `category_id`, `state_id`) VALUES('2010-06-07 03:55:38', 'title', 'body', '2010-06-07 03:55:38', 20, 23)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `articles` [0m
+Rendering template within layouts/application
+Rendering articles/index
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` WHERE (`states`.`id` = 23) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`id` = 20) [0m
+Rendered shared/_flashes (0.2ms)
+Rendered shared/_javascript (1.5ms)
+Completed in 11ms (View: 9, DB: 3) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /articles/19 with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM `articles` WHERE (`articles`.`id` = 19) [0m
+Rendering template within layouts/application
+Rendering articles/show
+  [4;36;1mState Load (0.2ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`id` = 23) [0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 20) [0m
+Rendered shared/_flashes (0.4ms)
+Rendered shared/_javascript (1.4ms)
+Completed in 8ms (View: 7, DB: 1) | 200 OK [http://www.example.com/articles/19]
+REQUESTING PAGE: POST /articles/19/flag with {} and HTTP headers {"HTTP_REFERER"=>"/articles/19"}
+
+
+Processing ArticlesController#flag (for 127.0.0.1 at 2010-06-06 23:55:38) [POST]
+  Parameters: {"id"=>"19"}
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `articles` WHERE (`articles`.`id` = 19) [0m
+  [4;35;1mState Load (0.2ms)[0m   [0mSELECT * FROM `states` WHERE (`states`.`name` = 'review') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Update (0.2ms)[0m   [0mUPDATE `articles` SET `updated_at` = '2010-06-07 03:55:38', `state_id` = 22 WHERE `id` = 19[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/articles/19
+Completed in 5ms (DB: 1) | 302 Found [http://www.example.com/articles/19/flag]
+REQUESTING PAGE: GET http://www.example.com/articles/19 with {} and HTTP headers {"HTTP_REFERER"=>"/articles/19/flag"}
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2010-06-06 23:55:38) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM `articles` WHERE (`articles`.`id` = 19) [0m
+Rendering template within layouts/application
+Rendering articles/show
+  [4;36;1mState Load (0.2ms)[0m   [0;1mSELECT * FROM `states` WHERE (`states`.`id` = 22) [0m
+  [4;35;1mCategory Load (0.1ms)[0m   [0mSELECT * FROM `categories` WHERE (`categories`.`id` = 20) [0m
+Rendered shared/_flashes (0.4ms)
+Rendered shared/_javascript (1.4ms)
+Completed in 7ms (View: 6, DB: 1) | 200 OK [http://www.example.com/articles/19]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m

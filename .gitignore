@@ -4,7 +4,5 @@ tmp/**/*
 coverage*
 *.swp
 tmp/*
-webrat.*
-
 !.keep
-
+rerun.txt
